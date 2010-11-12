@@ -19,8 +19,6 @@
 			$container	= $('#modal-wrap'),
 			$document	= $(document),
 			$overlay	= $('#modal-overlay');
-		
-		$overlay.css({'opacity':'0.9'});
 				
 		$.modal.empowerLinks = function() {
 			
@@ -41,11 +39,15 @@
 			
 			var $modal = $(modal);
 			
-			if(!$modal.length)
+			if(!$modal.length) {
 				return false;
+			}
 			
 			$container.show();
 			$modal.show();
+			
+			
+				
 				
 			$document.bind( 'keypress.modal' , function( event ){
 				if( event.keyCode === 27 ){

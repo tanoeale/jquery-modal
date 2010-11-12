@@ -37,7 +37,7 @@ p {
   z-index: 999;
   height: 100%;
   width: 100%;
-  background-color: #000;
+  background: url('gfx/bg-overlay.png');
 }
 .modal {
   position: relative;
@@ -46,6 +46,7 @@ p {
   background: #fff;
   margin: 100px auto 0;
   padding: 20px;
+  border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border: 5px solid #f7f7f7;

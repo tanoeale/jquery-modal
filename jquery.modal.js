@@ -46,6 +46,11 @@
 			$container.show();
 			$modal.show();
 			
+			// Make modal fit
+			$overlay.height('');
+			if( $modal.height() > $overlay.height() ){
+				$overlay.height($modal.outerHeight() + 200);
+			}
 			
 				
 				

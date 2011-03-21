@@ -30,18 +30,26 @@ p {
   color: #000;
 }
 /* Modal */
-.overlay {
+.modal-wrap {
+  height: 100%;
+  left: 0;
   position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.overlay {
+  position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 999;
   height: 100%;
   width: 100%;
-  background: url('gfx/bg-overlay.png');
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  filter: alpha(opacity=80);
 }
 .modal {
   position: relative;
-  z-index: 100;
   text-align: left;
   background: #fff;
   margin: 100px auto;

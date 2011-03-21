@@ -10,55 +10,53 @@
 
 </head>
 	<body>
-	
-		<div id="modal-wrap" class="hidden">
-			<div id="modal-overlay" class="overlay">
-
-				<div id="modal-one" class="modal">
-					<div class="header">
-						<h1>This is modal One</h1>
-						<a class="modal-close" href="#">Close</a>
-					</div>
-					<div class="content">
-						<p>
-							Clicking the button below will open Modal number two using Javascript.
-						</p>
-						<p>
-							<a id="open-next-modal" class="button">Open next modal</a>
-						</p>
-					</div>
+		
+		<div id="modal-wrap" class="modal-wrap hidden">
+			<div id="modal-overlay" class="overlay"></div>
+			
+			<div id="modal-one" class="modal">
+				<div class="header">
+					<h1>This is modal One</h1>
+					<a class="modal-close" href="#">Close</a>
 				</div>
-				
-				<div id="modal-two" class="modal">
-					<div class="header">
-						<h1>This is modal Two</h1>
-						<a class="modal-close" href="#">Close</a>
-					</div>
-					<div class="content">
-						<p>
-							Clicking the button below will open Modal number two using an anchor.
-						</p>
-						<p>
-							<a href="#modal-three" class="button" rel="modal">Open modal Three</a>
-						</p>
-					</div>
+				<div class="content">
+					<p>
+						Clicking the button below will open Modal number two using Javascript.
+					</p>
+					<p>
+						<a id="open-next-modal" class="button">Open next modal</a>
+					</p>
 				</div>
-				
-				<div id="modal-three" class="modal">
-					<div class="header">
-						<h1>This is modal Two</h1>
-						<a class="modal-close" href="#">Close</a>
-					</div>
-					<div class="content">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						</p>
-						<p>
-							<a id="close-modal" class="button">Close modal</a>
-						</p>
-					</div>
+			</div>
+			
+			<div id="modal-two" class="modal">
+				<div class="header">
+					<h1>This is modal Two</h1>
+					<a class="modal-close" href="#">Close</a>
 				</div>
-
+				<div class="content">
+					<p>
+						Clicking the button below will open Modal number two using an anchor.
+					</p>
+					<p>
+						<a href="#modal-three" class="button" rel="modal">Open modal Three</a>
+					</p>
+				</div>
+			</div>
+			
+			<div id="modal-three" class="modal">
+				<div class="header">
+					<h1>This is modal Two</h1>
+					<a class="modal-close" href="#">Close</a>
+				</div>
+				<div class="content">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+					<p>
+						<a id="close-modal" class="button">Close modal</a>
+					</p>
+				</div>
 			</div>
 		</div>
 
@@ -67,9 +65,10 @@
 		<script type="text/javascript">
 			
 			$(function(){
-				
+			
 				$.modal();
-				$.modal.open('#modal-one');
+				
+				$.modal.open('/modals/about.html');
 				
 				$('#open-next-modal').bind('click', function(){
 					$.modal.open('#modal-two');

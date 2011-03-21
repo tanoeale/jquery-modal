@@ -36,9 +36,20 @@
 		$.modal.open = function(modal) {
 			
 			$('.modal', $container).hide();
+			var $modal;
 			
-			var $modal = $(modal);
+			if(modal.match(/#/)){
+				$modal = $(modal);
+				show();	
+			} else {
+				$.get(modal, function( element ){
+					$modal = $(element);
+					$overlay.after($modal);
+					show();
+				});
+			}
 			
+			function show(){
 			if(!$modal.length) {
 				return false;
 			}
@@ -50,6 +61,7 @@
 			$overlay.height('');
 			if( $modal.height() > $overlay.height() ){
 				$overlay.height($modal.outerHeight() + 200);
+			}
 			}
 			
 				

@@ -1,7 +1,7 @@
 /**
 *	@name							Modal
 *	@descripton						Modal creates modals
-*	@version						1.0
+*	@version						1.1
 *	@requires						Jquery 1.4.2
 *
 *	@author							Jan Jarfalk

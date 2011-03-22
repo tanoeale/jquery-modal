@@ -1,73 +1,53 @@
-@import url("reset.css");
-/* Framwork */
-body {
-  background: #fff;
-  font: normal 13px 'Helvetica', 'Arial', 'sans-serif';
-  height: 100%;
-  width: 100%;
-}
-/* Helpers */
-.hidden {
-  display: none;
-}
-/* Typhography */
-h1 {
-  font: bold 16px/32px Helvetica, Arial, sans-serif;
-}
-p {
-  font: normal 13px/18px Helvetica, Arial, sans-serif;
-  margin-bottom: 10px;
-}
-/* Generic */
-.button {
-  float: left;
-  padding: 10px;
-  background: #ccc;
-  border: 1px solid #777;
-  -moz-border-radius: 10px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #000;
-}
 /* Modal */
-.modal-wrap {
-  height: 100%;
-  left: 0;
+#modal-wrap {
   position: absolute;
+  left: 0;
   top: 0;
   width: 100%;
+  height: 100%;
   z-index: 1000;
 }
-.overlay {
+
+#modal-wrap .overlay {
   position: fixed;
-  top: 0px;
   left: 0px;
-  height: 100%;
+  top: 0px;
   width: 100%;
+  height: 100%;
   background: #000;
   background: rgba(0, 0, 0, 0.8);
   filter: alpha(opacity=80);
 }
-.modal {
+
+#modal-wrap .modal {
   position: relative;
-  text-align: left;
-  background: #fff;
-  margin: 100px auto;
-  padding: 20px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border: 5px solid #f7f7f7;
+  margin: 0 auto;
+  padding: 100px 0;
   width: 300px;
   overflow: hidden;
 }
-.modal-close {
+
+#modal-wrap .header {
+	position:relative;
+}
+
+#modal-wrap .plate {
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 5px solid #fff;
+  overflow:hidden;
+}
+
+#modal-wrap .modal-close {
+  position: absolute;
+  right: -20px;
+  top: -20px;
   width: 32px;
   height: 32px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  overflow: hidden;
   background: url('gfx/icon-close.png') no-repeat center center;
   text-indent: -9999px;
-  overflow: hidden;
 }

@@ -1,14 +1,14 @@
 /**
 *    @name                            Modal
-*    @descripton                        Modal creates modals
-*    @version                        1.0
+*    @descripton                      Modal creates modals
+*    @version                         1.0
 *    @requires                        Jquery 1.4.2
 *
-*    @author                            Jan Jarfalk
+*    @author                          Jan Jarfalk
 *    @author-email                    jan.jarfalk@unwrongest.com
-*    @author-website                    http://www.unwrongest.com
+*    @author-website                  http://www.unwrongest.com
 *
-*    @licens                            MIT License - http://www.opensource.org/licenses/mit-license.php
+*    @licens                          MIT License - http://www.opensource.org/licenses/mit-license.php
 */
 
 (function($) {

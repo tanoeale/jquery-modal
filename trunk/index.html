@@ -86,9 +86,14 @@
 					$.modal.open('modals/about.html');
 				});
 				
-				$('#open-next-modal').bind('click', function(){
+				$('[rel*=modal]').live('click', function() {
+					$.modal.open($(this).attr('href'));
+				});
+				
+				$('#open-next-modal').bind('click', function(e) {
 					$.modal.open('#modal-two');
 				});
+				
 				
 				$('#close-modal').bind('click', function(){
 					$.modal.close();

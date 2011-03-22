@@ -54,8 +54,7 @@
                 if(!$modal.length) {
                     return false;
                 }
-                
-                $modal.css('top', $('html').scrollTop());
+                $modal.css('top', $(window).scrollTop());
                 
                 $container.show();
                 $modal.show();
@@ -63,7 +62,7 @@
             }
             
 			$(window).resize(function () {
-				$modal.css('top', $('html').scrollTop());
+				$modal.css('top', $(window).scrollTop());
 			});
 
                 

@@ -50,28 +50,22 @@
             }
             
             function show(){
-                //If modal doesnt exists...break
+            
                 if(!$modal.length) {
                     return false;
                 }
                 
-                //Opening where you are (looking at body scroll)
                 $modal.css('top', $('html').scrollTop());
                 
-                //Show overlay and the modal
                 $container.show();
                 $modal.show();
-                
-        
-                // Make modal fit
-                /*
-                if( $modal.height() > $overlay.height() ){
-                    $overlay.height($modal.outerHeight());
-                }
-                */
+    
             }
             
-                
+			$(window).resize(function () {
+				$modal.css('top', $('html').scrollTop());
+			});
+
                 
             $document.bind( 'keypress.modal' , function( event ){
                 if( event.keyCode === 27 ){
@@ -90,25 +84,22 @@
         }
         
         $.modal.close = function( index, item ) {
-        
+        	window.location.hash = 'closed';
             $document.unbind( 'keypress.modal' );
             $container.unbind( 'click.modal' );                
             $('.modal', $container).hide();
             $container.hide();
             
         }
-        // Hide all modals
+
         $('.modal', $container).hide();
         
-        // Open current modal window
         if(location.hash.length > 0) {
             $.modal.open(location.hash);
         }
         
-        // Convert links to hashes.
         $.modal.empowerLinks();
 
     }
-
 
 })(jQuery);

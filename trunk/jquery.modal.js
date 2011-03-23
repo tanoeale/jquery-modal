@@ -11,20 +11,34 @@
 *    @licens                          MIT License - http://www.opensource.org/licenses/mit-license.php
 */
 
-(function($) {
-    
-    $.modal = function() {
+(function($) {    
+    $.modal = function(options) {
+    	
+    	//Defaults
+        var defaults = {
+    		trigger: '[rel*=modal]',
+            modal: '.modal',
+            container : '#modal-wrap',
+            overlay : '#modal-overlay',
+            close: '.modal-close',
+            closeHash: 'closed'
+        }
+             
+        var options =  $.extend(defaults, options);
+    	    	
+    	
     	
     	//Settings
-        var callback     = callback || function(){},
-            $container    = $('#modal-wrap'),
+        var $container    = $(options.container),
             $document    = $(document),
-            $overlay    = $('#modal-overlay');
+            $overlay    = $(options.overlay);
+        
                
 		//Open function
         $.modal.open = function(modal) {
+        
             //Hide all the modals
-            $('.modal', $container).hide();
+            $(options.modal, $container).hide();
             var $modal;
             
             //Checks if it is a anchor link or an normal link. If its normal open with ajax (get)
@@ -88,7 +102,7 @@
             //Close when clicking on overlay    
             $container.live('click.modal', function( event ){
             
-                if(event.target.className == 'overlay' || event.target.className == 'modal-close'){
+                if(event.target.className === $overlay.attr('class') || event.target.className === $(options.close, $modal).attr('class')){
                     event.preventDefault();
                     $.modal.close();
                 }
@@ -99,25 +113,30 @@
         //Close function
         $.modal.close = function( index, item ) {
 	        //Changes the hash to closed
-        	window.location.hash = 'closed';
+        	window.location.hash = options.closeHash;
       		
       		//Unbind events  	
             $document.unbind( 'keypress.modal' );
             $container.unbind( 'click.modal' );
             
             //Hide modal, and container             
-            $('.modal', $container).hide();
+            $(options.modal, $container).hide();
             $container.hide();
             
         }
 		
 		//Hide any modal, thats open.
-        $('.modal', $container).hide();
+        $(options.modal, $container).hide();
         
         //If you have any hash open it
         if(location.hash.length > 0) {
             $.modal.open(location.hash);
         }
+        
+        //Default trigger
+        $(options.trigger).live('click', function() {
+        	$.modal.open($(this).attr('href'));
+        });
 
     }
 

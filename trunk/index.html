@@ -77,7 +77,7 @@
 		<script type="text/javascript">
 			
 			$(function(){
-			
+				
 				$.modal();
 				
 				$.modal.open('modals/about.html');
@@ -86,9 +86,6 @@
 					$.modal.open('modals/about.html');
 				});
 				
-				$('[rel*=modal]').live('click', function() {
-					$.modal.open($(this).attr('href'));
-				});
 				
 				$('#open-next-modal').bind('click', function(e) {
 					$.modal.open('#modal-two');

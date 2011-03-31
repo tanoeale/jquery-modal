@@ -25,6 +25,8 @@ p {
   background: #ccc;
   border: 1px solid #777;
   -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
   color: #000;

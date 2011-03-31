@@ -39,15 +39,12 @@
   background-color: #000;
   color: #fff;
   position: absolute;
+  padding: 4px 5px;
   right: -10px;
   top: -10px;
-  padding: 0 4px;
-  width: auto;
-  height: auto;
   display: block;
   overflow: hidden;
-  font-size: 19px;
-  text-align: center;
+  font-size: 11px;
   text-decoration: none;
   font-weight: bold;
   border: 2px solid #fff;

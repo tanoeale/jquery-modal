@@ -38,6 +38,7 @@
         $.modal.open = function(modal) {
         
             //Hide all the modals
+            $('.ajax', $container).remove();
             $(options.modal, $container).hide();
             var $modal;
             
@@ -47,7 +48,7 @@
                 show();    
             } else {
                 $.get(modal, function( element ){
-                    $modal = $(element);
+                    $modal = $(element).addClass('ajax');
                     $overlay.after($modal);
                     show();
                 });
@@ -63,6 +64,7 @@
                 fixScroll();
                 
                 //Show container and modal
+                
                 $container.show();
                 $modal.show();
                 
@@ -89,12 +91,21 @@
 			
 			//If you change window, fix the modal so it doesnt follow it (like closing firebug for ff)
 			$(window).bind('resize', fixScroll);
+
+            //Close by clicking close
+            $(options.close, $modal).live( 'click' , function( event ){
+            
+                event.preventDefault();
+                $.modal.close($modal);
+                
+            });
+
 			
 			//Close with esc key (27)
             $document.bind( 'keypress.modal' , function( event ){
             
                 if( event.keyCode === 27 ){
-                    $.modal.close();
+                    $.modal.close($modal);
                 }
                 
             });
@@ -104,14 +115,15 @@
             
                 if(event.target.className === $overlay.attr('class') || event.target.className === $(options.close, $modal).attr('class')){
                     event.preventDefault();
-                    $.modal.close();
+                    $.modal.close($modal);
                 }
                 
             });        
         }
         
         //Close function
-        $.modal.close = function( index, item ) {
+        $.modal.close = function($modal) {
+        
 	        //Changes the hash to closed
         	window.location.hash = options.closeHash;
       		
@@ -119,7 +131,10 @@
             $document.unbind( 'keypress.modal' );
             $container.unbind( 'click.modal' );
             
-            //Hide modal, and container             
+            //Hide modal, and container, if its an ajax loaded modal, remove it
+            if($modal.hasClass('ajax')) {
+           		$modal.remove();
+           	}             
             $(options.modal, $container).hide();
             $container.hide();
             

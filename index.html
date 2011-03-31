@@ -24,7 +24,7 @@
 				<div class="plate">
 					<div class="header">
 						<h1>This is modal One</h1>
-						<a class="modal-close" href="#">Close</a>
+						<a class="modal-close" href="#"><span>&times;</span></a>
 					</div>
 					<div class="content">
 						<p>
@@ -41,7 +41,7 @@
 				<div class="plate">
 					<div class="header">
 						<h1>This is modal Two</h1>
-						<a class="modal-close" href="#">Close</a>
+						<a class="modal-close" href="#"><span>&times;</span></a>
 					</div>
 					<div class="content">
 						<p>
@@ -58,7 +58,7 @@
 				<div class="plate">
 					<div class="header">
 						<h1>This is modal Two</h1>
-						<a class="modal-close" href="#">Close</a>
+						<a class="modal-close" href="#"><span>&times;</span></a>
 					</div>
 					<div class="content">
 						<p>
@@ -89,11 +89,6 @@
 				
 				$('#open-next-modal').bind('click', function(e) {
 					$.modal.open('#modal-two');
-				});
-				
-				
-				$('#close-modal').bind('click', function(){
-					$.modal.close();
 				});
 				
 			});

@@ -10,17 +10,24 @@
 }
 
 #modal-wrap .modal {
-	position: relative; margin:0 auto; padding:100px 0; width: 300px; overflow: hidden;
+	position: relative; margin:0 auto; padding:100px 0; width: 300px;
 } 
    
-#modal-wrap .white-plate {
+#modal-wrap .plate {
 	padding: 20px;
 	background: #fff;
+	position:relative;
 	border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 5px solid #f7f7f7;
 }
-
+#modal-wrap .plate .content {
+	overflow:hidden;
+}
 #modal-wrap .modal-close {
-	position: absolute; right: 0; top: 0; width: 32px; height: 32px; overflow: hidden;
-	background: url('gfx/icon-close.png') no-repeat center center;
-	text-indent: -9999px;
+    background-color:#000;
+    color: #fff;
+    position: absolute; right: -10px; top: -10px; padding: 0 4px; width: auto; height: auto; display: block; overflow: hidden;    
+    font-size: 19px; text-align: center; text-decoration: none;
+    border:2px solid #fff;
+	-moz-border-radius: 16px; -webkit-border-radius: 16px; border-radius: 16px;
+	-moz-box-shadow: 0 0 5px #666; -webkit-box-shadow: 0 0 5 #666; box-shadow: 0 0 5px #666;
 }

@@ -150,7 +150,7 @@
         
         //Default trigger
         $(options.trigger).live('click', function() {
-        	$.modal.open($(this).attr('href'));
+        	$.modal.open($(this).attr('hash'));
         });
 
     }

@@ -11,7 +11,7 @@
 *    @licens                          MIT License - http://www.opensource.org/licenses/mit-license.php
 */
 
-(function($) {    
+(function($) {
     $.modal = function(options) {
     	
     	//Defaults
@@ -105,7 +105,7 @@
             $document.bind( 'keypress.modal' , function( event ){
             
                 if( event.keyCode === 27 ){
-                    $.modal.close($modal);
+                    $.modal.close( $modal.attr('id') );
                 }
                 
             });
@@ -115,15 +115,17 @@
             
                 if(event.target.className === $overlay.attr('class') || event.target.className === $(options.close, $modal).attr('class')){
                     event.preventDefault();
-                    $.modal.close($modal);
+                    $.modal.close( $modal.attr('id') );
                 }
                 
             });        
         }
         
         //Close function
-        $.modal.close = function($modal) {
-        
+        $.modal.close = function(modal) {
+        	
+        	var $modal = $(modal);
+        	
 	        //Changes the hash to closed
         	window.location.hash = options.closeHash;
       		
@@ -156,3 +158,4 @@
     }
 
 })(jQuery);
+$.modal();

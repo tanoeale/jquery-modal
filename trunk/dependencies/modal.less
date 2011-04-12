@@ -6,7 +6,8 @@
 
 #modal-wrap .overlay {
 	position: fixed; left: 0px; top: 0px; width:100%; height:100%;
-	background:#000; background: rgba(0,0,0,0.8); filter: alpha(opacity=80);
+	opacity:0.75;
+	background:#000; background-image: -moz-radial-gradient(#666, #000);	background-image: -webkit-radial-gradient(#666, #000);
 }
 
 #modal-wrap .modal {
@@ -22,7 +23,7 @@
 #modal-wrap .plate .content {
 	overflow:hidden;
 }
-#modal-wrap .modal-close {
+#modal-wrap .header .modal-close {
     background-color:#000;
     color: #fff;
     position: absolute; padding:4px 5px; right: -10px; top: -10px; display: block; overflow: hidden;    

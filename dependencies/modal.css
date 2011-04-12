@@ -13,9 +13,10 @@
   top: 0px;
   width: 100%;
   height: 100%;
+  opacity: 0.75;
   background: #000;
-  background: rgba(0, 0, 0, 0.8);
-  filter: alpha(opacity=80);
+  background-image: -moz-radial-gradient(#666666, #000000);
+  background-image: -webkit-radial-gradient(#666666, #000000);
 }
 #modal-wrap .modal {
   position: relative;
@@ -35,7 +36,7 @@
 #modal-wrap .plate .content {
   overflow: hidden;
 }
-#modal-wrap .modal-close {
+#modal-wrap .header .modal-close {
   background-color: #000;
   color: #fff;
   position: absolute;

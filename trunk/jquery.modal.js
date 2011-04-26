@@ -146,7 +146,7 @@
         $(options.modal, $container).hide();
         
         //If you have any hash open it
-        if(location.hash.length > 0) {
+        if(location.hash.length > 1 && $(location.hash).hasClass('modal')) {
             $.modal.open(location.hash);
         }
         

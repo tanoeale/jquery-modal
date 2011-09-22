@@ -8,6 +8,8 @@
 *    @author-email                    jan.jarfalk@unwrongest.com
 *    @author-website                  http://www.unwrongest.com
 *
+*    @thanks		                  Christian Ranebäck
+*
 *    @licens                          MIT License - http://www.opensource.org/licenses/mit-license.php
 */
 
@@ -29,8 +31,8 @@
     	
     	
     	//Settings
-        var $container    = $(options.container),
-            $document    = $(document),
+        var $container	= $(options.container),
+            $document	= $(document),
             $overlay    = $(options.overlay);
         
                

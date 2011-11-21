@@ -45,10 +45,17 @@
             var $modal;
             
             //Checks if it is a anchor link or an normal link. If its normal open with ajax (get)
-            if(modal.match(/#/)){
+            if(modal.match(/^#/)){
+            	// HASH
                 $modal = $(modal);
-                show();    
+                show();  
+            } else if( modal.trim().match(/</) ) {
+            	// HTML
+				$modal = $(modal).addClass('ajax');
+                $overlay.after($modal);
+				show();
             } else {
+            	// URL
                 $.get(modal, function( element ){
                     $modal = $(element).addClass('ajax');
                     $overlay.after($modal);
@@ -154,7 +161,7 @@
         
         //Default trigger
         $(options.trigger).live('click', function() {
-        	$.modal.open($(this).attr('hash'));
+        	$.modal.open($(this).attr('href'));
         });
 
     }
